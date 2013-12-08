@@ -10,4 +10,20 @@
 
 @implementation Card
 
+- (int) match:(NSArray *)otherCards
+{
+    int score = 0;
+    
+    // [] and dot notation .contetnts used for properties
+    //if used == it compares bare pointers not values. when you have class name you must have *, you cant get memory
+    //you can use both [] and dot notation for method
+    for(Card *card in otherCards){
+        if([card.contents isEqualToString:self.contents])
+        {
+            score=1;
+        }
+    }
+    return score;
+}
+
 @end
